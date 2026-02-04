@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hacker ALI OP 👑</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    color: #00ff00;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+/* Background photo */
+.bg-photo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.ibb.co/fz3mjqTK/IMG-20260129-WA0066.jpg") no-repeat center;
+    background-size: cover;
+    filter: brightness(40%) contrast(120%);
+    z-index: -2;
+}
+
+/* Matrix */
+.matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 0 0 15px #00ff00;
+}
+
+.name {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 12px #00ff00;
+}
+
+/* Center box */
+.center-box {
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Profile photo */
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 20px #00ff00;
+    margin-bottom: 30px;
+}
+
+/* Download */
+.download-box a {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 16px;
+    text-shadow: 0 0 10px #00ff00;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+.download-box a:hover {
+    background: #00ff00;
+    color: black;
+}
+
+/* Terminal */
+.terminal {
+    padding: 20px;
+    font-size: 14px;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-photo"></div>
+<canvas class="matrix"></canvas>
+
+<h1>ACCESS GRANTED</h1>
+<div class="name">HACKER : <b>ALI OP 👑</b></div>
+
+<div class="center-box">
+    <img class="profile-photo" src="https://i.ibb.co/fz3mjqTK/IMG-20260129-WA0066.jpg" alt="ALI OP">
+
+    <div class="download-box">
+        <a href="https://op8685687-beep.github.io/ALi-OP/" target="_blank">
+            ⬇ DOWNLOAD NOW
+        </a>
+    </div>
+</div>
+
+<div class="terminal">
+> User verified: ALI OP 👑<br>
+> Access level: ROOT ✔<br>
+> Injecting code ██████████ 100%<br>
+> System Status: ONLINE<span class="cursor">_</span>
+</div>
+
+<script>
+const canvas = document.querySelector(".matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = [];
+
+for (let i = 0; i < columns; i++) drops[i] = 1;
+
+function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff00";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.97)
+            drops[i] = 0;
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+</script>
+
+</body>
+</html>
